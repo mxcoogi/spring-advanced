@@ -1,4 +1,4 @@
-package org.example.expert.domain.auth.exception;
+package org.example.expert.config.error;
 
 public class AuthException extends RuntimeException {
 

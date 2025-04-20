@@ -1,4 +1,4 @@
-package org.example.expert.domain.common.exception;
+package org.example.expert.config.error;
 
 public class InvalidRequestException extends RuntimeException {
     public InvalidRequestException(String message) {
