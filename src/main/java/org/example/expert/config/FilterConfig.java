@@ -16,7 +16,18 @@ public class FilterConfig {
         FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new JwtFilter(jwtUtil));
         registrationBean.addUrlPatterns("/*"); // 필터를 적용할 URL 패턴을 지정합니다.
-
+        registrationBean.setOrder(2);
+        System.out.println("jwtfilter");
         return registrationBean;
     }
+    @Bean
+    public FilterRegistrationBean<ErrorFilter> errorFilter() {
+        FilterRegistrationBean<ErrorFilter> registrationBean = new FilterRegistrationBean<>();
+        registrationBean.setFilter(new ErrorFilter());
+        registrationBean.addUrlPatterns("/*"); // 필터를 적용할 URL 패턴을 지정합니다.
+        registrationBean.setOrder(1);
+        System.out.println("errorfilter 1");
+        return registrationBean;
+    }
+
 }
