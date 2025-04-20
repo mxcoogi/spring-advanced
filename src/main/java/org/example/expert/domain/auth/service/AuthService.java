@@ -29,14 +29,10 @@ public class AuthService {
     public SignupResponse signup(SignupRequest signupRequest) {
 
         if (userRepository.existsByEmail(signupRequest.getEmail())) {
-            log.info("Generate Error");
             throw new InvalidRequestException("이미 존재하는 이메일입니다.");
         }
         String encodedPassword = passwordEncoder.encode(signupRequest.getPassword());
-        log.info("encoder excute");
         UserRole userRole = UserRole.of(signupRequest.getUserRole());
-        log.info("create user role");
-
 
         User newUser = new User(
                 signupRequest.getEmail(),
