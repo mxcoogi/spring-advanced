@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 @Slf4j
-public class MyInterceptor implements HandlerInterceptor {
+public class Interceptor implements HandlerInterceptor {
 
     private final ThreadLocal<LogInfo> logInfoThreadLocal = new ThreadLocal<>();
 
